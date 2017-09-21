@@ -7,6 +7,8 @@ using System.IO;
 
 public class EngineComponent : MonoBehaviour {
     
+    // Optional component for engine interaction
+
     public static EngineComponent instance;
 
     public string modFolder;

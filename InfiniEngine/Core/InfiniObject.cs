@@ -22,14 +22,14 @@ namespace InfiniEngine {
 
             get {
 
-                return this.texture;
+                return texture;
 
             }
 
             set {
 
                 unityObject.GetComponent<Renderer>().material.SetTexture("_MainTex", value);
-                this.texture = value;
+                texture = value;
 
             }
 
@@ -39,7 +39,7 @@ namespace InfiniEngine {
 
             get {
 
-                return this.isDynamic;
+                return isDynamic;
 
             }
 
@@ -53,7 +53,7 @@ namespace InfiniEngine {
 
                     }
 
-                    this.isDynamic = value;
+                    isDynamic = value;
 
                 } else {
 
@@ -63,7 +63,7 @@ namespace InfiniEngine {
 
                     }
 
-                    this.isDynamic = value;
+                    isDynamic = value;
 
                 }
 
@@ -103,7 +103,7 @@ namespace InfiniEngine {
             if (myState != ObjectState.Chared && myState != ObjectState.OnFire) {
                 
                 myState = ObjectState.OnFire;
-                if (OnIgnite != null) OnIgnite(this, EventArgs.Empty);
+                OnIgnite?.Invoke(this, EventArgs.Empty);
 
             }
 
@@ -130,7 +130,7 @@ namespace InfiniEngine {
 
             }
 
-            if (OnDestroy != null) OnDestroy(this, myState);
+            OnDestroy?.Invoke(this, myState);
 
         }
 

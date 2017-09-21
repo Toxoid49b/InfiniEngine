@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
-using InfiniEngine;
+﻿using UnityEngine;
 using InfiniEngine.Generator;
 using InfiniEngine.Terrain;
 
 public class ChunkComponent : MonoBehaviour {
+
+    // Optional chunk handler component
 
     private Chunk thisChunk;
     private ChunkTerrainGenerator chunkGen;
@@ -40,7 +39,7 @@ public class ChunkComponent : MonoBehaviour {
 
     public void DestroyChunk() {
 
-        Destroy(this.gameObject);
+        Destroy(gameObject);
 
     }
 

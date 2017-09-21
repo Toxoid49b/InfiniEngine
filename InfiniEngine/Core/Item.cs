@@ -9,15 +9,15 @@ namespace InfiniEngine {
         
             get {
 
-                return this.itemName;
+                return itemName;
 
             }
 
             set {
 
-                if (this.itemName == "") {
+                if (itemName == "") {
 
-                    this.itemName = value;
+                    itemName = value;
 
                 }
 

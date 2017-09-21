@@ -33,7 +33,7 @@ namespace InfiniEngine.UI {
 
             if (GUI.Button(controlRegion, controlCaption, controlStyle)) {
 
-                if (OnClick != null) OnClick(this, EventArgs.Empty);
+                OnClick?.Invoke(this, EventArgs.Empty);
 
             }
 

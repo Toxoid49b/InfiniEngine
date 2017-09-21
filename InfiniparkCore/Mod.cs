@@ -8,6 +8,8 @@ namespace InfiniparkCore {
 
     public class Mod : InfiniMod {
 
+        // Example mod for InfiniEngine
+
         public override bool Init() {
 
             RegisterCommands();

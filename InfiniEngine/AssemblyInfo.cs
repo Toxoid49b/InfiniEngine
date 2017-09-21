@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Neptunium Studios")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("2016-2017 Toxoid_49b")]
+[assembly: AssemblyCopyright("2016-2017 Toxoid_49b & Justquant")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

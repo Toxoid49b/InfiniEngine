@@ -1,5 +1,4 @@
 using System;
-using InfiniEngine;
 
 namespace InfiniEngine {
 
@@ -19,7 +18,7 @@ namespace InfiniEngine {
 
         public void Cycle() {
 
-            if(OnCycle != null) OnCycle(this, EventArgs.Empty);
+            OnCycle?.Invoke(this, EventArgs.Empty);
 
         }
 

@@ -4,13 +4,15 @@ using InfiniEngine;
 
 public class ObjectComponent : MonoBehaviour {
 
+    // Should be applied to all gameobjects to be managed by the engine
+
     public InfiniObject infiniObject {
 
         get {
 
             if (isInitialized) {
 
-                return this.infiniObject;
+                return infiniObject;
 
             } else return null;
 

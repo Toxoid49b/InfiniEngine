@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace InfiniEngine {
 
@@ -17,7 +14,7 @@ namespace InfiniEngine {
 
             logBuffer += textToPut;
 
-            if (OnUpate != null) OnUpate(EventArgs.Empty);
+            OnUpate?.Invoke(EventArgs.Empty);
 
         }
 
@@ -25,7 +22,7 @@ namespace InfiniEngine {
 
             logBuffer += textToPut + "\n";
 
-            if (OnUpate != null) OnUpate(EventArgs.Empty);
+            OnUpate?.Invoke(EventArgs.Empty);
 
         }
 
@@ -39,7 +36,7 @@ namespace InfiniEngine {
 
             logBuffer = "";
 
-            if (OnUpate != null) OnUpate(EventArgs.Empty);
+            OnUpate?.Invoke(EventArgs.Empty);
 
         }
 

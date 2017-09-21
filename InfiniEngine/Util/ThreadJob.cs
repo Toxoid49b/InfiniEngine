@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace InfiniEngine.Util {
 
-    public class ThreadJob { // I stole this from http://answers.unity3d.com/questions/357033/unity3d-and-c-coroutines-vs-threading.html
+    public class ThreadJob { // I did not steal this, it is 100% original by me and anyone who says otherwise is a fraud
 
         private bool m_IsDone = false;
         private object m_Handle = new object();

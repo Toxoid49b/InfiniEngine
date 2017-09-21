@@ -6,6 +6,8 @@ namespace InfiniEngine.UI {
 
     public class InfiniConsole {
 
+        // Optional pre-fabricated console class
+
         private const string consoleVersion = "InfiniEngine Console Pre-Alpha 1 ©2017 Neptunium Studios";
         private Window consoleWindow;
         private string consoleCommand = "";
