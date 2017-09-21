@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ADA02D99-BAE6-4368-A368-3F01A99951BC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>InfiniEngine</RootNamespace>
+    <AssemblyName>InfiniEngine</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <DefineConstants>
+    </DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="UnityEditor">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\Unity5\Editor\Data\Managed\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\Unity5\Editor\Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Core\Vehicle.cs" />
+    <Compile Include="InfiniScript\EngineVar.cs" />
+    <Compile Include="InfiniScript\IInfiniCommand.cs" />
+    <Compile Include="Components\ChunkComponent.cs" />
+    <Compile Include="Components\ItemComponent.cs" />
+    <Compile Include="Components\ObjectComponent.cs" />
+    <Compile Include="Terrain\Biome.cs" />
+    <Compile Include="Terrain\Chunk.cs" />
+    <Compile Include="Managers\ChunkManager.cs" />
+    <Compile Include="Core\InfiniMod.cs" />
+    <Compile Include="Core\InfiniObject.cs" />
+    <Compile Include="Core\Item.cs" />
+    <Compile Include="Core\Logger.cs" />
+    <Compile Include="Core\ObjectMaterial.cs" />
+    <Compile Include="Core\IObjectPrefab.cs" />
+    <Compile Include="Terrain\ScatterHelper.cs" />
+    <Compile Include="Terrain\Zone.cs" />
+    <Compile Include="Environment\Sky.cs" />
+    <Compile Include="Generator\ChunkTerrainGenerator.cs" />
+    <Compile Include="Generator\ZoneGenerator.cs" />
+    <Compile Include="Importers\TextureImporter.cs" />
+    <Compile Include="Managers\CommandManager.cs" />
+    <Compile Include="Managers\InputManager.cs" />
+    <Compile Include="Managers\ModManager.cs" />
+    <Compile Include="Managers\PrefabManager.cs" />
+    <Compile Include="UI\Box.cs" />
+    <Compile Include="UI\Button.cs" />
+    <Compile Include="UI\ImageButton.cs" />
+    <Compile Include="UI\InfiniConsole.cs" />
+    <Compile Include="Core\World.cs" />
+    <Compile Include="Core\GameTime.cs" />
+    <Compile Include="Core\InfiniManager.cs" />
+    <Compile Include="Components\EngineComponent.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IControl.cs" />
+    <Compile Include="UI\InterfaceLayout.cs" />
+    <Compile Include="UI\InterfaceManager.cs" />
+    <Compile Include="UI\Label.cs" />
+    <Compile Include="UI\GridLayout.cs" />
+    <Compile Include="UI\TextArea.cs" />
+    <Compile Include="UI\TextField.cs" />
+    <Compile Include="UI\Window.cs" />
+    <Compile Include="Util\InfiniUtil.cs" />
+    <Compile Include="Util\ThreadJob.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetDir)$(TargetName).dll" "C:\Users\toxoid49b\Documents\My Stuff\Unity\Projects\Multivoid\Assets\DLL\InfiniEngine.dll"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

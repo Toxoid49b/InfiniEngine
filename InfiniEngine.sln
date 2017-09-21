@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfiniEngine", "InfiniEngine\InfiniEngine.csproj", "{ADA02D99-BAE6-4368-A368-3F01A99951BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfiniparkCore", "InfiniparkCore\InfiniparkCore.csproj", "{717A9F60-F79E-43D3-9C0B-B87975929456}"
+	ProjectSection(ProjectDependencies) = postProject
+		{ADA02D99-BAE6-4368-A368-3F01A99951BC} = {ADA02D99-BAE6-4368-A368-3F01A99951BC}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADA02D99-BAE6-4368-A368-3F01A99951BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADA02D99-BAE6-4368-A368-3F01A99951BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADA02D99-BAE6-4368-A368-3F01A99951BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADA02D99-BAE6-4368-A368-3F01A99951BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{717A9F60-F79E-43D3-9C0B-B87975929456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{717A9F60-F79E-43D3-9C0B-B87975929456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{717A9F60-F79E-43D3-9C0B-B87975929456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{717A9F60-F79E-43D3-9C0B-B87975929456}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = InfiniEngine\InfiniEngine.csproj
+	EndGlobalSection
+EndGlobal
