@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetDir)$(TargetName).dll" "C:\Users\toxoid49b\Documents\My Stuff\Unity\Projects\Multivoid\Assets\DLL\InfiniEngine.dll"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>
