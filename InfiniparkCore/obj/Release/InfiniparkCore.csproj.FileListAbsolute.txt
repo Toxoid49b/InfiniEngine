@@ -1,0 +1,21 @@
+C:\Users\Toxoid\Desktop\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\bin\Release\InfiniparkCore.dll
+C:\Users\Toxoid\Desktop\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\bin\Release\InfiniparkCore.pdb
+C:\Users\Toxoid\Desktop\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\bin\Release\InfiniEngine.dll
+C:\Users\Toxoid\Desktop\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\bin\Release\UnityEngine.dll
+C:\Users\Toxoid\Desktop\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\bin\Release\InfiniEngine.pdb
+C:\Users\Toxoid\Desktop\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\bin\Release\UnityEngine.xml
+C:\Users\Toxoid\Desktop\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\obj\Release\InfiniparkCore.csprojResolveAssemblyReference.cache
+C:\Users\Toxoid\Desktop\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\obj\Release\InfiniparkCore.Properties.Resources.resources
+C:\Users\Toxoid\Desktop\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\obj\Release\InfiniparkCore.csproj.GenerateResource.Cache
+C:\Users\Toxoid\Desktop\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\obj\Release\InfiniparkCore.dll
+C:\Users\Toxoid\Desktop\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\obj\Release\InfiniparkCore.pdb
+C:\Users\Toxoid49b\Desktop\InfiniEngine\InfiniparkCore\obj\Release\InfiniparkCore.csprojResolveAssemblyReference.cache
+C:\Users\Toxoid49b\Desktop\InfiniEngine\InfiniparkCore\obj\Release\InfiniparkCore.Properties.Resources.resources
+C:\Users\Toxoid49b\Desktop\InfiniEngine\InfiniparkCore\obj\Release\InfiniparkCore.csproj.GenerateResource.Cache
+C:\Users\Toxoid49b\Desktop\InfiniEngine\InfiniparkCore\obj\Release\InfiniparkCore.dll
+C:\Users\Toxoid49b\Desktop\InfiniEngine\InfiniparkCore\bin\Release\InfiniparkCore.dll
+C:\Users\Toxoid49b\Desktop\InfiniEngine\InfiniparkCore\bin\Release\InfiniparkCore.pdb
+C:\Users\Toxoid49b\Desktop\InfiniEngine\InfiniparkCore\bin\Release\InfiniEngine.dll
+C:\Users\Toxoid49b\Desktop\InfiniEngine\InfiniparkCore\bin\Release\InfiniEngine.pdb
+C:\Users\Toxoid49b\Desktop\InfiniEngine\InfiniparkCore\bin\Release\UnityEngine.xml
+C:\Users\Toxoid49b\Desktop\InfiniEngine\InfiniparkCore\obj\Release\InfiniparkCore.pdb
