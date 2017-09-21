@@ -47,6 +47,9 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Core\Vehicle.cs" />
+    <Compile Include="Generator\MaterialGenerator.cs" />
+    <Compile Include="Importers\ColladaImporter.cs" />
+    <Compile Include="Importers\WavefrontImporter.cs" />
     <Compile Include="InfiniScript\EngineVar.cs" />
     <Compile Include="InfiniScript\IInfiniCommand.cs" />
     <Compile Include="Components\ChunkComponent.cs" />
