@@ -12,7 +12,7 @@ public class ChunkComponent : MonoBehaviour {
 
     void Awake() {
 
-        thisChunk = new Chunk(this);
+        //thisChunk = new Chunk(this);
 
     }
 

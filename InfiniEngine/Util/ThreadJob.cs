@@ -36,7 +36,7 @@ namespace InfiniEngine.Util {
         }
 
         public virtual void Start() {
-
+            
             m_Thread = new System.Threading.Thread(Run);
             m_Thread.Start();
 

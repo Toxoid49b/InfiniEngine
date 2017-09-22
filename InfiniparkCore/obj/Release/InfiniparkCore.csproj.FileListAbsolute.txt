@@ -19,3 +19,13 @@ C:\Users\Toxoid49b\Desktop\InfiniEngine\InfiniparkCore\bin\Release\InfiniEngine.
 C:\Users\Toxoid49b\Desktop\InfiniEngine\InfiniparkCore\bin\Release\InfiniEngine.pdb
 C:\Users\Toxoid49b\Desktop\InfiniEngine\InfiniparkCore\bin\Release\UnityEngine.xml
 C:\Users\Toxoid49b\Desktop\InfiniEngine\InfiniparkCore\obj\Release\InfiniparkCore.pdb
+C:\Users\toxoid49b\Documents\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\bin\Release\InfiniparkCore.dll
+C:\Users\toxoid49b\Documents\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\bin\Release\InfiniparkCore.pdb
+C:\Users\toxoid49b\Documents\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\bin\Release\InfiniEngine.dll
+C:\Users\toxoid49b\Documents\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\bin\Release\UnityEngine.dll
+C:\Users\toxoid49b\Documents\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\bin\Release\InfiniEngine.pdb
+C:\Users\toxoid49b\Documents\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\obj\Release\InfiniparkCore.csprojResolveAssemblyReference.cache
+C:\Users\toxoid49b\Documents\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\obj\Release\InfiniparkCore.Properties.Resources.resources
+C:\Users\toxoid49b\Documents\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\obj\Release\InfiniparkCore.csproj.GenerateResource.Cache
+C:\Users\toxoid49b\Documents\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\obj\Release\InfiniparkCore.dll
+C:\Users\toxoid49b\Documents\My Stuff\Unity\Engines\InfiniEngine\InfiniparkCore\obj\Release\InfiniparkCore.pdb

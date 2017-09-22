@@ -25,9 +25,9 @@ namespace InfiniEngine {
 
         }
 
-        private uint? itemID;
+        private uint itemID;
 
-        public Item(string name, uint? id) {
+        public Item(string name, uint id) {
 
             itemName = name;
             itemID = id;

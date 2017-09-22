@@ -63,6 +63,16 @@ namespace InfiniparkCore.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] cube {
+            get {
+                object obj = ResourceManager.GetObject("cube", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] Portal {
             get {
                 object obj = ResourceManager.GetObject("Portal", resourceCulture);

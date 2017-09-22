@@ -2,42 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 using InfiniEngine.Terrain;
+using InfiniEngine.Generator;
 
 namespace InfiniEngine.Managers {
 
     public static class ChunkManager {
 
-        private static bool isLoadingChunks;
-        private static byte numberOfChunksToProcess;
         private static Vector2[] newChunkPositions = new Vector2[9];
-        private static Vector2 lastPosition;
-        private static string chunkSceneName;
+        private static Vector2? lastPosition;
         private static bool isInitialized = false;
+        private static InfiniTerrain defaultTerrain;
+        private static float incrementX;
+        private static float incrementZ;
+        private static Dictionary<Vector2, Chunk> activeChunks = new Dictionary<Vector2, Chunk>();
 
-        public static Dictionary<Vector2, Chunk> loadedChunks = new Dictionary<Vector2, Chunk>();
+        public static void Initialize(InfiniTerrain terrainObject) {
 
-        public static void Initialize(string sceneName) {
-
-            chunkSceneName = sceneName;
+            defaultTerrain = terrainObject;
             isInitialized = true;
 
         }
 
-        public static void RunChunkUpdate(Vector2 playerPositionRounded) {
+        public static void RunChunkUpdate(Vector3 playerPosition, bool autoGenerateTerrain) {
 
-            if (!isInitialized) { Logger.Put("Chunk update reqeusted without proper initialization!"); return; }
+            incrementX = defaultTerrain.GetUnityObject().gameObject.GetComponent<MeshFilter>().sharedMesh.bounds.size.x;
+            incrementZ = defaultTerrain.GetUnityObject().gameObject.GetComponent<MeshFilter>().sharedMesh.bounds.size.z;            
+            Vector2 playerPositionRounded = new Vector2((Mathf.Round(playerPosition.x / incrementX) * incrementX) / incrementX, (Mathf.Round(playerPosition.z / incrementZ) * incrementZ) / incrementZ);
 
-            isLoadingChunks = true;
+            if (lastPosition != null) {
+                if (playerPositionRounded == lastPosition) return;
+            }
+
+            if (!isInitialized) throw new Exception("Chunk update reqeusted without proper initialization!");
 
             for (float I = playerPositionRounded.x - 1.0f; I <= playerPositionRounded.x + 1.0f; I++) {
 
                 for (float J = playerPositionRounded.y - 1.0f; J <= playerPositionRounded.y + 1.0f; J++) {
 
-                    if(!loadedChunks.ContainsKey(new Vector2(I,J))){
+                    if(!activeChunks.ContainsKey(new Vector2(I, J))){
 
-                        Application.LoadLevelAdditiveAsync(chunkSceneName);
-                        newChunkPositions[numberOfChunksToProcess] = new Vector2(I, J);
-                        numberOfChunksToProcess++;
+                        GameObject terObj = (GameObject)GameObject.Instantiate(defaultTerrain.GetUnityObject(), new Vector3(I * incrementX, 0, J * incrementZ), Quaternion.identity);
+                        InfiniTerrain newTerrain = new InfiniTerrain(terObj);
+                        Chunk newChunk = new Chunk(newTerrain, new Biome(128.0f, 16.0f, 32.0f), new Vector2(I, J));
+                        if (autoGenerateTerrain) newChunk.GenerateTerrain();                        
+                        activeChunks.Add(new Vector2(I, J), newChunk);
 
                     }
 
@@ -45,7 +53,7 @@ namespace InfiniEngine.Managers {
 
             }
 
-            Vector2 playMoveDir = playerPositionRounded - lastPosition;
+            Vector2 playMoveDir = playerPositionRounded - lastPosition.GetValueOrDefault();
             playMoveDir.Normalize();
 
             if (playMoveDir == Vector2.up) {
@@ -54,10 +62,10 @@ namespace InfiniEngine.Managers {
 
                     Vector2 nextToTest = new Vector2(K, playerPositionRounded.y - 2);
 
-                    if (loadedChunks.ContainsKey(nextToTest)) {
+                    if (activeChunks.ContainsKey(nextToTest)) {
 
-                        loadedChunks[nextToTest].RemoveChunk();
-                        loadedChunks.Remove(nextToTest);
+                        GameObject.Destroy(activeChunks[nextToTest].GetTerrainObject().GetUnityObject());
+                        activeChunks.Remove(nextToTest);
 
                     }
                 
@@ -71,10 +79,10 @@ namespace InfiniEngine.Managers {
 
                     Vector2 nextToTest = new Vector2(K, playerPositionRounded.y + 2);
 
-                    if (loadedChunks.ContainsKey(nextToTest)) {
+                    if (activeChunks.ContainsKey(nextToTest)) {
 
-                        loadedChunks[nextToTest].RemoveChunk();
-                        loadedChunks.Remove(nextToTest);
+                        GameObject.Destroy(activeChunks[nextToTest].GetTerrainObject().GetUnityObject());
+                        activeChunks.Remove(nextToTest);
 
                     }
 
@@ -88,10 +96,10 @@ namespace InfiniEngine.Managers {
 
                     Vector2 nextToTest = new Vector2(playerPositionRounded.x + 2, K);
 
-                    if (loadedChunks.ContainsKey(nextToTest)) {
+                    if (activeChunks.ContainsKey(nextToTest)) {
 
-                        loadedChunks[nextToTest].RemoveChunk();
-                        loadedChunks.Remove(nextToTest);
+                        GameObject.Destroy(activeChunks[nextToTest].GetTerrainObject().GetUnityObject());
+                        activeChunks.Remove(nextToTest);
 
                     }
 
@@ -105,10 +113,10 @@ namespace InfiniEngine.Managers {
 
                     Vector2 nextToTest = new Vector2(playerPositionRounded.x - 2, K);
 
-                    if (loadedChunks.ContainsKey(nextToTest)) {
+                    if (activeChunks.ContainsKey(nextToTest)) {
 
-                        loadedChunks[nextToTest].RemoveChunk();
-                        loadedChunks.Remove(nextToTest);
+                        GameObject.Destroy(activeChunks[nextToTest].GetTerrainObject().GetUnityObject());
+                        activeChunks.Remove(nextToTest);
 
                     }
 
@@ -118,26 +126,6 @@ namespace InfiniEngine.Managers {
 
             lastPosition = playerPositionRounded;
 
-        }
-
-        public static void RegisterChunk(Chunk chunkToRegister) {
-
-            if (!isInitialized) { Logger.Put("Chunk registration reqeusted without proper initialization!"); return; }
-
-            if (isLoadingChunks) {
-
-                chunkToRegister.SetChunkConfigurationInformation(newChunkPositions[numberOfChunksToProcess - 1], new Biome(), new Zone(), "A New Chunk"); //ToDo: Fix
-                numberOfChunksToProcess--;
-                loadedChunks.Add(newChunkPositions[numberOfChunksToProcess], chunkToRegister);
-
-                if (numberOfChunksToProcess <= 0) isLoadingChunks = false;
-
-            } else {
-
-                Debug.LogError("[ERROR] Chunk attempted registration when no spawning opperation was in progress!"); 
-
-            }
-        
         }
 
     }

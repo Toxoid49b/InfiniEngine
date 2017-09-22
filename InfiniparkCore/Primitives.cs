@@ -1,7 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using InfiniEngine;
 using InfiniEngine.Importers;
+using InfiniEngine.Generator;
 
 namespace InfiniparkCore {
 
@@ -80,6 +80,16 @@ namespace InfiniparkCore {
                 primitiveSphere.AddComponent<Rigidbody>();
                 ObjectComponent sphereInfiniObject = primitiveSphere.AddComponent<ObjectComponent>();
                 sphereInfiniObject.InitializeObject(25, 600);
+
+            }
+
+        }
+
+        public class NewCube : IObjectPrefab {
+
+            public void Instantiate(Vector3 requestedPosition, Quaternion requestedRotation) {
+
+                InfiniObject.CreateObject("New Cube", WavefrontImporter.MeshFromBytes(Properties.Resources.cube), MaterialGenerator.DefaultMaterial(), requestedPosition, requestedRotation, new Vector3(1, 1, 1), 100, 100, true);
 
             }
 

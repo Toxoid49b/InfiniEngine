@@ -77,6 +77,15 @@ namespace InfiniEngine.Generator {
 
         }
 
+        public static Material DefaultMaterial() {
+
+            Material newMat = new Material(Shader.Find("Standard"));
+            newMat.color = Color.white;
+            newMat.name = "Default";
+            return newMat;
+
+        }
+
     }
 
 }

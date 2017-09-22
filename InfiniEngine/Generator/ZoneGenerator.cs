@@ -13,13 +13,6 @@ namespace InfiniEngine.Generator {
 
         }
 
-        public Zone GetZoneByChunkCoord(Vector3 chunkCoord) {
-
-            Zone z = new Zone();
-            return z;
-        
-        }
-
     }
 
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace InfiniEngine {
@@ -7,6 +8,8 @@ namespace InfiniEngine {
     public delegate void OnInfiniObjectDestroyEventHandler(object sender, InfiniObject.ObjectState os);
 
     public class InfiniObject {
+
+        private Dictionary<string, object> metaData = new Dictionary<string, object>();
 
         public enum ObjectState {
 
@@ -79,10 +82,12 @@ namespace InfiniEngine {
         private int objectIngitionPoint;
         private ObjectState myState;
 
-        public InfiniObject(GameObject thisUnityObject, int startingHealth, int ignitionPoint) {
+        public InfiniObject(GameObject thisUnityObject, int startingHealth, int ignitionPoint, bool dynamic) {
 
             unityObject = thisUnityObject;
             objectHealth = startingHealth;
+            objectIngitionPoint = ignitionPoint;
+            isDynamic = dynamic;
 
         }
 
@@ -125,8 +130,7 @@ namespace InfiniEngine {
 
             if (myState == ObjectState.OnFire) {
 
-                myState = ObjectState.Chared;
-                unityObject.GetComponent<Renderer>().material.color = Color.black;               
+                myState = ObjectState.Chared;         
 
             }
 
@@ -137,6 +141,59 @@ namespace InfiniEngine {
         public ObjectState GetState() {
 
             return myState;
+
+        }
+
+        public void AddMetaData(string dataName, object dataValue) {
+
+            metaData.Add(dataName, dataValue);
+
+        }
+
+        public bool UpdateMetaData(string dataName, object newValue) {
+
+            if (metaData.ContainsKey(dataName)) {
+
+                metaData[dataName] = newValue;
+                return true;
+
+            } else {
+
+                return false;
+
+            }
+
+        }
+
+        public bool DestroyMetaData(string dataName) {
+
+            if (metaData.ContainsKey(dataName)) {
+
+                metaData.Remove(dataName);
+                return true;
+
+            } else {
+
+                return false;
+
+            }
+
+        }
+
+        /// <summary>
+        /// Creates a new InfiniObject based on the given paramaters
+        /// </summary>
+        public static InfiniObject CreateObject(string objectName, Mesh objectMesh, Material objectMaterial, Vector3 initialPosition, Quaternion initialRotation, Vector3 initalScale, int initalHealth, int ignitionPoint, bool isDynamic = true) {
+
+            GameObject baseObject = new GameObject(objectName);
+            baseObject.AddComponent<MeshFilter>().mesh = objectMesh;
+            baseObject.AddComponent<MeshRenderer>().material = objectMaterial;
+            baseObject.transform.localPosition = initialPosition;
+            baseObject.transform.localRotation = initialRotation;
+            baseObject.transform.localScale = initalScale;
+
+            InfiniObject newObject = new InfiniObject(baseObject, initalHealth, ignitionPoint, isDynamic);
+            return newObject;
 
         }
 

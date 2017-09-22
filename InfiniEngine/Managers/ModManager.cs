@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Reflection;
-using UnityEngine;
 
 namespace InfiniEngine.Managers {
 
     public static class ModManager {
 
-        public static void LoadMod(string modPath) {
+        public static bool LoadMod(string modPath) {
 
             Assembly modAssembly = Assembly.LoadFrom(modPath);
             Type modClass = modAssembly.GetType(modAssembly.GetName().Name + ".Mod", true);
@@ -21,17 +19,17 @@ namespace InfiniEngine.Managers {
 
                 if ((bool)retVal) {
 
-                    Debug.Log("Loaded a mod!");
+                    return true;
 
                 } else {
 
-                    Debug.LogWarning("Could not load the mod \"" + modPath + "\"! [Mod Init() Returned False]");
+                    return false;
 
                 }
 
             } else {
 
-                Debug.LogWarning("Could not load the mod \"" + modPath + "\"! [Mod class is not a subclass of InfiniMod!]");
+                return false;
 
             }
 

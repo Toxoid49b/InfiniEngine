@@ -26,7 +26,7 @@ public class ObjectComponent : MonoBehaviour {
 
     public void InitializeObject(int startingHealth, int ignitionTemp) {
 
-        infiniObject = new InfiniObject(this.gameObject, startingHealth, ignitionTemp);
+        infiniObject = new InfiniObject(this.gameObject, startingHealth, ignitionTemp, true);
         isInitialized = true;
 
     }

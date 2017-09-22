@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Core\Vehicle.cs" />
+    <Compile Include="Core\Weapon.cs" />
     <Compile Include="Generator\MaterialGenerator.cs" />
     <Compile Include="Importers\ColladaImporter.cs" />
     <Compile Include="Importers\WavefrontImporter.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="Components\ChunkComponent.cs" />
     <Compile Include="Components\ItemComponent.cs" />
     <Compile Include="Components\ObjectComponent.cs" />
+    <Compile Include="Managers\ItemManager.cs" />
     <Compile Include="Terrain\Biome.cs" />
     <Compile Include="Terrain\Chunk.cs" />
     <Compile Include="Managers\ChunkManager.cs" />
@@ -64,8 +66,8 @@
     <Compile Include="Core\Logger.cs" />
     <Compile Include="Core\ObjectMaterial.cs" />
     <Compile Include="Core\IObjectPrefab.cs" />
+    <Compile Include="Terrain\InfiniTerrain.cs" />
     <Compile Include="Terrain\ScatterHelper.cs" />
-    <Compile Include="Terrain\Zone.cs" />
     <Compile Include="Environment\Sky.cs" />
     <Compile Include="Generator\ChunkTerrainGenerator.cs" />
     <Compile Include="Generator\ZoneGenerator.cs" />

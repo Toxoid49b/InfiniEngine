@@ -1,42 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
-using InfiniEngine.Managers;
+﻿using UnityEngine;
 
 namespace InfiniEngine.Terrain {
 
     public class Chunk {
 
-        private ChunkComponent thisChunkComponent;
+        private InfiniTerrain thisTerrain;
 
         public Vector2 chunkPosition;
-        public List<Vector3> trailerSpawns = new List<Vector3>();
         public string chunkName;
         public Biome chunkBiome;
-        public Zone chunkZone;
 
-        public Chunk(ChunkComponent cc) {
+        public Chunk(InfiniTerrain it, Biome b, Vector2 posRounded) {
 
-            thisChunkComponent = cc;
-
-            ChunkManager.RegisterChunk(this); // Register with the chunk manager to let it know this chunk has spawned
-
-        }
-
-        /// <summary>
-        /// Called after the Chunk Manager registers the chunk, used to initialize chunk information
-        /// </summary>
-        public void SetChunkConfigurationInformation(Vector2 newChunkPosition, Biome newChunkBiome, Zone newChunkZone, string newChunkName) {
-
-            chunkPosition = newChunkPosition;
-            thisChunkComponent.gameObject.transform.position = new Vector3((newChunkPosition.x * 128) + 64, 0.0f, (newChunkPosition.y * 128) + 64);
-            thisChunkComponent.StartGenerator();
+            thisTerrain = it;
+            chunkBiome = b;
+            chunkPosition = posRounded;
 
         }
 
-        public void RemoveChunk() {
+        public InfiniTerrain GetTerrainObject() {
 
-            thisChunkComponent.DestroyChunk();
+            return thisTerrain;
+
+        }
+
+        public void GenerateTerrain() {
+
+            thisTerrain.GenerateTerrain(chunkBiome.terrainDetailScale, chunkBiome.terrainHeight);
 
         }
 
