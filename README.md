@@ -1,2 +1,2 @@
 # InfiniEngine
-Shitty ass game engine
+Old game engine for InfiniPark, superceded by FluxEngine
